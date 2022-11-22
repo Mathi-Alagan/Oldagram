@@ -2,7 +2,7 @@
 It is a mini instagram clone. 
 It is created with the help of HTML, CSS and JavaScript. 
 The contents in the page are rendered out using JS. 
-The post-like feature will be added soon.
+The post-like feature is added soon. But,the like animation on the post needs some work. Soon it'll be added too.
 I used semantic HTML to make the browser more accessible. The following image is a sample of what I built.
 
 
