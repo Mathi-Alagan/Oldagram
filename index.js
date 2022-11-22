@@ -42,16 +42,21 @@ function render(posts) {
                 <p class="user-location">${posts[i].location}</p>
             </div>
         </div>
-
-        <img src="${posts[i].post}" alt="Post by ${posts[i].name}" class="post-img">
-
+        
+        <div class="post-img">
+            <img src="${posts[i].post}" alt="Post by ${posts[i].name}" id="${posts[i].username}p">
+            
+        </div>
+        
         <div class="container">
             <div class="btns">
-                <img src="images/icon-heart.png" alt="Like" class="interact like-btn">
+                <div class="chumma">
+                <i class="fa fa-heart-o fa-lg" aria-hidden="true" id="${posts[i].username}"></i>
+                </div>
                 <img src="images/icon-comment.png" alt="Comment" class="interact comment-btn">
                 <img src="images/icon-dm.png" alt="DM" class="interact dm-btn">
             </div>
-            <p class="post-likes">${posts[i].likes} likes</p>
+            <p class="post-likes"><span id="${posts[i].username}c">${posts[i].likes}</span> likes</p>
             <p class="post-caption"><span class="user-name">${posts[i].username}</span> just took a few mushrooms lol</p>
         </div>
 
@@ -61,6 +66,37 @@ function render(posts) {
     mainEl.innerHTML = str
 }
 render(posts)
+
+const postArr = [vincey1853p, gus1819p, jd1735p]
+const likeArr = [vincey1853, gus1819, jd1735]
+const countArr = [vincey1853c, gus1819c, jd1735c]
+
+for (let i = 0; i < postArr.length; i++) {
+    postArr[i].addEventListener('dblclick', function () {
+        toggle(likeArr[i], countArr[i], countArr[i].innerText)
+    })
+    likeArr[i].addEventListener('click', function () {
+        toggle(likeArr[i], countArr[i], countArr[i].innerText)
+    })
+}
+
+function toggle(postLike, likeCountEl, count) {
+    if (postLike.classList.contains('fa-heart-o')) {
+        postLike.classList.replace('fa-heart-o', 'fa-heart')
+        count++
+        likeCountEl.innerHTML = `${count}`
+
+    }
+    else {
+        postLike.classList.replace('fa-heart', 'fa-heart-o')
+        count--
+        likeCountEl.innerHTML = `${count}`
+    }
+}
+
+
+
+
 
 
 

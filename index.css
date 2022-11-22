@@ -65,6 +65,9 @@ section {
 }
 
 .post-img {
+  position: relative;
+}
+.post-img img {
   display: block;
   width: 375px;
   height: 375px;
@@ -80,13 +83,20 @@ section {
 }
 
 .interact {
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 23px;
 }
-.interact:hover {
+.interact:hover,
+.fa-heart-o:hover {
   opacity: 0.4;
 }
 .post-likes {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+.fa-heart {
+  color: #f2003c;
+}
+.fa-heart-o {
+  color: black;
 }
